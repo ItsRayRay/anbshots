@@ -1,6 +1,7 @@
 ---
 import Icon, { Props as IconProps } from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
+import logo from '../assets/logo-cropped.png'
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
@@ -11,20 +12,16 @@ const textLinks: { label: string; href: string }[] = [
 
 /** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
-	{ label: 'Twitter', href: 'https://twitter.com/me', icon: 'twitter-logo' },
-	{ label: 'Twitch', href: 'https://twitch.tv/me', icon: 'twitch-logo' },
-	{ label: 'GitHub', href: 'https://github.com/me', icon: 'github-logo' },
-	{ label: 'CodePen', href: 'https://codepen.io/me', icon: 'codepen-logo' },
-	{ label: 'dribbble', href: 'https://dribbble.com/me', icon: 'dribbble-logo' },
+		{ label: 'Instagram', href: 'https://www.youtube.com/@me/', icon: 'instagram-logo' },
 	{ label: 'YouTube', href: 'https://www.youtube.com/@me/', icon: 'youtube-logo' },
+	{ label: 'TikTok', href: 'https://www.youtube.com/@me/', icon: 'tiktok-logo' },
 ];
 ---
 
 <nav>
 	<div class="menu-header">
 		<a href="/" class="site-title">
-			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
-			Jeanine White
+			<img class="logo" src={logo} alt="logo website" />
 		</a>
 		<menu-button>
 			<template>
@@ -113,6 +110,17 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 </script>
 
 <style>
+
+	.logo {
+
+  background-image: url('your-logo.png'); /* Replace 'your-logo.png' with the path to your logo */
+  background-size: cover;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adjust the shadow properties as desired */
+  border-radius: 5px; /* Adjust the border radius as desired */
+  /* Add any other desired styles */
+	}
+
 	nav {
 		z-index: 9999;
 		position: relative;
